@@ -10,7 +10,7 @@ def findPeak(arr):
         return max(arr[0], arr[1])
 
     if arr[length / 2] < arr[length / 2 - 1]:
-        return findPeak(arr[:(length / 2 - 1)])
+        return findPeak(arr[:(length / 2)])
     elif arr[length / 2] < arr[length / 2 + 1]:
         return findPeak(arr[length / 2 + 1:])
     else:
@@ -33,7 +33,7 @@ class TestFindPeak(unittest.TestCase):
         self.assertEqual(findPeak([8, 9, 10, 5, 4, 3, 2, 1]), 10)
 
     def test_peak_middle_right(self):
-        elf.assertEqual(findPeak([1, 2, 3, 4, 5, 6, 5, 4]), 6)
+        self.assertEqual(findPeak([1, 2, 3, 4, 5, 6, 5, 4]), 6)
 
 
 if __name__ == '__main__':
